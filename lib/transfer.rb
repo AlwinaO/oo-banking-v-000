@@ -32,5 +32,9 @@ class Transfer
       receiver.balance -= amount
       sender.balance += amount
       self.status = "reversed"
+    else sender.balance <= 0 && self.status == "open"
+      self.status = "rejected"
+      "Transaction rejected. Please check your account balance."
+
   end
 end
